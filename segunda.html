@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eu tô livre pra você!</title>
+</head>
+
+<body>
+    <div id="conteudo">
+        <h2>Eu tô livre pra você!</h2>
+        <p>Vai negar passar o dia comigo?</p>
+        <div style="margin: auto;width: 170px;">
+            <button class="btn" onclick="nao()">NÃO</button>
+            <button class="btn" onmouseover="desvia(this)" style="position: absolute;">SIM</button>
+        </div>
+    </div>
+</body>
+<style>
+    #conteudo {
+        background: #b649f5;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        text-align: center;
+        font-family: sans-serif;
+    }
+
+    .btn {
+        background: black;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 80px;
+        border-radius: 5px;
+    }
+</style>
+
+<script>
+    function nao() {
+        // redireciona para um URL após clicar no NÃO
+        location.href = "https://music.youtube.com/watch?v=izGwDsrQ1eQ";
+    }
+
+    function desvia(btn) {
+        // btn declarado na função
+        btn.style.position = 'absolute';
+        btn.style.bottom = geraPosicao(10, 90);
+        btn.style.left = geraPosicao(10, 90);
+        console.log('opa, desviei...');
+    }
+
+    function geraPosicao(min, max) {
+        return (Math.random() * (max - min) + min) + "%";
+    }
+
+</script>
+
+</html>
